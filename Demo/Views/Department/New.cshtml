@@ -1,0 +1,23 @@
+﻿@model Department
+@{
+    ViewData["Title"] = "New";
+}
+
+<h1>New</h1>
+
+<form asp-action="SaveNew" asp-controller="Department">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" required  placeholder="Enter The Department Name"/>
+      @*  @Html.LabelFor(x=>x.Name)
+      @* @Html.TextBoxFor(x=>x.Name , new{placeholder = "Enter The Department Name",@class = "form-control"})*@   
+        @*@Html.EditorFor(x=>x.Name)*@
+    </div>
+
+    <div>
+        <label asp-for="ManagerName"></label>
+        <input asp-for="ManagerName" class="form-control" placeholder="Enter The Manager Name" required/>
+    </div>
+    <input type="submit" value="Add" class="btn btn-success"/>
+</form>
+

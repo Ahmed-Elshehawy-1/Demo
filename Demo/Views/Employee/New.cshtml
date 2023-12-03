@@ -1,0 +1,40 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "New";
+    SelectList deptlist = new SelectList(ViewBag.Dept_List,"Id", "Name");
+}
+
+<h1>New</h1>
+
+<form asp-action="SaveNew" asp-controller="Employee" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input class="form form-control" asp-for="Name"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="salary"></label>
+        <input class="form form-control" asp-for="salary"/>
+        <span asp-validation-for="salary" class="text-danger"></span>
+
+    </div>
+
+    <div>
+        <label asp-for="Image"></label>
+        <input class="form form-control" asp-for="Image"/>
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Dept_Id"></label>
+        <select asp-for="Dept_Id" class="form-control" asp-items="deptlist">
+
+        </select>
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-success" />
+
+</form>
+<script src="~/lib/"></script>
+
